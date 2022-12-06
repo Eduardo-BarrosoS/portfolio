@@ -17,8 +17,8 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        background: ${(props) => props.theme.darkBlue};
-        background-image: url('./src/assets/bgEffect.svg');
+        background: ${(props) => props.theme.darkBlue} no-repeat url('./src/assets/bgEffect.svg');
+        background-size: cover;
         color: ${(props) => props.theme.white};
         -webkit-font-smoothing: antialiased;
     }

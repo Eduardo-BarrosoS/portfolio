@@ -9,6 +9,4 @@ export const HomeContainer = styled.div`
     height: 100vh;
     margin: 0 auto;
 
-
-
  `
