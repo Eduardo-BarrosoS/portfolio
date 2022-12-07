@@ -7,7 +7,6 @@ interface ITitleProps {
 export const Title = ({title}: ITitleProps) => {
 
     const firstLetter = title[0]
-    console.log(firstLetter)
 
     return (
         <TitleContainer>
