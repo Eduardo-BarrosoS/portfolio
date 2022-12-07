@@ -11,8 +11,8 @@ export const ContateMe = () => {
                 <FirstInformation>
                     <h3> Vamos conversar!</h3>
                     <span>
-                        Sinta livre para mandar mensagem. Estou sempre aberto a 
-                        opiniões, sugestões de projetos, odeias criativas, 
+                        Sinta-se livre para mandar mensagem. Estou sempre aberto a 
+                        opiniões, sugestões de projetos, ideias criativas, 
                         oportunidades e etc. 
                     </span>
 
