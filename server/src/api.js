@@ -19,7 +19,7 @@ client.on('ready', () => {
     console.log('Client send');
 });
 
-app.post('/send', async (req, res) => {
+app.post('/', async (req, res) => {
     const myNumber = "+558798199329"
     
     try {

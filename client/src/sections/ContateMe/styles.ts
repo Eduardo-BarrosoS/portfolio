@@ -31,7 +31,7 @@ export const FormContainer = styled.form`
     width: 44rem;
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 1.2rem;
 
     div {
         width: 100%;
@@ -48,7 +48,7 @@ export const FormContainer = styled.form`
     
     textarea {
         padding-top: 1.2rem;
-        height: 15rem;
+        height: 12rem;
         border-radius: 1.6rem;
         resize: none;
     }
@@ -101,9 +101,9 @@ export const Phone = styled.div`
             color: ${props => props.theme["gray-100"]};
             font-size: 1.4rem;
         }
-        spam {
+        span {
             color: ${props => props.theme["gray-500"]};
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
     } 
     `
