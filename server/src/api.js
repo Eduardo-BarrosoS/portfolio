@@ -14,31 +14,40 @@ client.on('qr', (qr) => {
     qrcode.generate(qr, {small: true});
 });
 
-app.post('/send', (req, res) => {
-    
+client.on('ready', () => {
+    console.log('Client is ready!');    
+    console.log('Client send');
+});
+
+app.post('/send', async (req, res) => {
+    const myNumber = "+558798199329"
     
     try {
-        const { text, number} = req.body
-        console.log(text, number)
+        const { name, lastName, subject, message, senderNumber, email} = req.body
+        console.log(subject)
+        const sendMessage = `
+        *${name} ${lastName}* 
+        ------ ${subject} ------ 
+        ${message} 
+        *[ ${senderNumber} ]* / *[ ${email} ]*
+        ` 
+        const chatId = myNumber.substring(1) + "@c.us";
+        client.sendMessage(chatId, sendMessage);
+        console.log("foi")
         
-        client.on('ready', () => {
-            console.log('Client is ready!');
-
-            const chatId = number.substring(1) + "@c.us";
-            client.sendMessage(chatId, text);
-
-            console.log('Client send');
-        });
         res.status(200).send("message sended")
     } catch (err) {
         console.log(err)
     }
-
+    
 })
 
-
+client.on('message', message => {
+	if(message.body === '!ping') {
+		message.reply('pong');
+	}
+});
 
 client.initialize();
-
 
 app.listen(3333, () => console.log('listening on'));
