@@ -1,10 +1,15 @@
 const express = require('express');
 const { Client } = require('whatsapp-web.js');
+const cors = require('cors');
 const qrcode = require('qrcode-terminal');
 
 const client = new Client();
 
 const app = express();
+
+app.use(cors({
+    origin: "*",
+}))
 
 app.use(express.json())
 
@@ -19,18 +24,18 @@ client.on('ready', () => {
     console.log('Client send');
 });
 
-app.post('/', async (req, res) => {
+app.post("/", async (req, res) => {
     const myNumber = "+558798199329"
     
     try {
         const { name, lastName, subject, message, senderNumber, email} = req.body
-        console.log(subject)
         const sendMessage = `
         *${name} ${lastName}* 
         ------ ${subject} ------ 
         ${message} 
         *[ ${senderNumber} ]* / *[ ${email} ]*
         ` 
+        console.log(req.body)
         const chatId = myNumber.substring(1) + "@c.us";
         client.sendMessage(chatId, sendMessage);
         console.log("foi")
@@ -41,12 +46,6 @@ app.post('/', async (req, res) => {
     }
     
 })
-
-client.on('message', message => {
-	if(message.body === '!ping') {
-		message.reply('pong');
-	}
-});
 
 client.initialize();
 

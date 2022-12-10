@@ -10,15 +10,15 @@ export const GlobalStyles = createGlobalStyle`
     :root {
         font-size: 62.5%;
     }
-
+    
     :focus {
         outline: none;
         box-shadow: 0 0 0 2px ${(props) => props.theme["yellow-300"]};
     }
-
+    
     body {
         background: ${(props) => props.theme.darkBlue} no-repeat url('./src/assets/bgEffect.svg');
-        background-size: cover;
+        background-color: ${(props) => props.theme.darkBlue};
         color: ${(props) => props.theme.white};
         -webkit-font-smoothing: antialiased;
     }
