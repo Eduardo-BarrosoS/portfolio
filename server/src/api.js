@@ -16,7 +16,7 @@ app.use(express.json())
 client.on('qr', (qr) => {
     // Generate and scan this code with your phone
     console.log('QR RECEIVED', qr);
-    qrcode.generate(qr, {small: true});
+    qrcode.generate(qr, {small: false,});
 });
 
 client.on('ready', () => {
