@@ -31,13 +31,12 @@ export const FormContainer = styled.form`
     width: 44rem;
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 1.2rem;
 
     div {
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
         gap: 2.4rem;
     }
 
@@ -48,7 +47,7 @@ export const FormContainer = styled.form`
     
     textarea {
         padding-top: 1.2rem;
-        height: 15rem;
+        height: 12rem;
         border-radius: 1.6rem;
         resize: none;
     }
@@ -80,7 +79,12 @@ export const FormContainer = styled.form`
         font-size: 1.4rem;
         font-weight: bold;
         cursor: pointer;
-        &:hover {
+        
+        &:disabled {
+            border: 1px solid ${props => props.theme["gray-500"]};
+            color: ${props => props.theme["gray-500"]};
+        }
+        &:not(:disabled):hover {
             transition: all 300ms ease;
             scale: 1.05;
         }
@@ -101,12 +105,38 @@ export const Phone = styled.div`
             color: ${props => props.theme["gray-100"]};
             font-size: 1.4rem;
         }
-        spam {
+        span {
             color: ${props => props.theme["gray-500"]};
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
     } 
     `
 export const Email = styled(Phone)`
     margin-top: 2.4rem;
+`
+
+export const CheckboxContainer = styled.div`
+
+width: 100%;
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+
+font-weight: 400;
+font-size: 1.4rem;
+line-height: 2rem;
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    cursor: pointer;
+
+    input { 
+        box-shadow: none;
+    }
+}
+
+
 `
