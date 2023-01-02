@@ -21,7 +21,7 @@ type ContactFormType = zod.infer<typeof contactFormSchema>
 
 export const ContateMe = () => {
 
-    const { register, handleSubmit, reset, watch, getValues, getFieldState } = useForm<ContactFormType>({
+    const { register, handleSubmit, reset, watch, getValues } = useForm<ContactFormType>({
         resolver: zodResolver(contactFormSchema)
     });
     watch()
@@ -54,7 +54,7 @@ export const ContateMe = () => {
 
     function handleFormSubmit() {
         sendMessage()
-        // reset()
+        reset()
     }
 
     return (
