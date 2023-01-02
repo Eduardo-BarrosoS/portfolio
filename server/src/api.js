@@ -1,10 +1,10 @@
 const express = require('express');
-const { Client } = require('whatsapp-web.js');
 const cors = require('cors');
-const qrcode = require('qrcode-terminal');
+const dotenv = require('dotenv');
 
-const client = new Client();
+const nodemailer = require("nodemailer")
 
+dotenv.config()
 const app = express();
 
 app.use(cors({
@@ -13,40 +13,44 @@ app.use(cors({
 
 app.use(express.json())
 
-client.on('qr', (qr) => {
-    // Generate and scan this code with your phone
-    console.log('QR RECEIVED', qr);
-    qrcode.generate(qr, {small: true,});
-});
-
-client.on('ready', () => {
-    console.log('Client is ready!');    
-    console.log('Client send');
-});
-
 app.post("/", async (req, res) => {
-    const myNumber = "+558798199329"
-    
+
     try {
-        const { name, lastName, subject, message, senderNumber, email} = req.body
-        const sendMessage = `
-        *${name} ${lastName}* 
-        ------ ${subject} ------ 
-        ${message} 
-        *[ ${senderNumber} ]* / *[ ${email} ]*
-        ` 
-        console.log(req.body)
-        const chatId = myNumber.substring(1) + "@c.us";
-        client.sendMessage(chatId, sendMessage);
-        console.log("foi")
+        const { name, lastName, subject, message, senderNumber, email, whatsAppCheck, emailCheck } = req.body
         
+        const transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true,
+            auth: {
+                user: process.env.EMAIL, // generated ethereal user
+                pass: process.env.PASS, // generated ethereal password
+            },
+            tls: {
+                rejectUnauthorized: false,
+            }
+        })
+        
+        const sendMail = await transporter.sendMail({
+            from: '" Ei vagabundo 👻" <barrosoeduardo64@gmail.com>', // sender address
+            to: "eduardobarroso186@gmail.com", // list of receivers
+            subject: "Vai trabalhar, mas antes deixe de ser morto e olhe o email (eduar...)  ", // Subject line
+            text: "Hello world?", // plain text body
+            html: `
+            <strong> Name: </strong> <span> ${name + lastName} </span><br/>
+            <strong> Email: </strong> <span> ${email} </span><br/>
+            <strong> Subject: </strong> <span> ${subject} </span><br/>
+            <strong> Number: </strong> <span> ${senderNumber} </span><br/>
+            <strong> Message: </strong> <span> ${message} </span><br/>
+            <strong> Contate-me por Whatsapp: </strong> <span> ${whatsAppCheck} </span><br/>
+            <strong> Contate-me por email: </strong> <span> ${emailCheck} </span><br/>
+            `, // html body
+        });
+    
         res.status(200).send("message sended")
     } catch (err) {
         console.log(err)
     }
-    
 })
-
-client.initialize();
 
 app.listen(3333, () => console.log('listening on'));
