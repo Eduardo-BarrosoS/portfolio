@@ -1,9 +1,9 @@
-import dotenv from "dotenv"
+// import dotenv from "dotenv"
 
-dotenv.config()
+// dotenv.config()
 
 import axios from "axios"
 
 export const api = axios.create({
-    baseURL: process.env.ROUT
+    baseURL: "https://portfolio-vf9y.onrender.com"
 })
