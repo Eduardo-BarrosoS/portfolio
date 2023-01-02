@@ -92,7 +92,7 @@ export const ContateMe = () => {
                         <input type="text" {...register("lastName")} placeholder="Sobrenome *" />
                     </div>
 
-                    <input type="tel" {...register("senderNumber", { required: true })} placeholder="Seu número Ex.: (87) 99819-9329 (Opcional)" />
+                    <input type="tel" {...register("senderNumber", { required: true })} placeholder="Seu número Ex.: (87) 99999-9999 (Opcional)" />
                     <input type="email" {...register("email", { required: false })} placeholder="Seu email *" />
 
                     <input type="text" {...register("subject", { required: true })} placeholder="Assunto *" />
