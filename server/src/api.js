@@ -37,10 +37,10 @@ app.post("/", async (req, res) => {
             subject: "Vai trabalhar, mas antes deixe de ser morto e olhe o email (eduar...)  ", // Subject line
             text: "Hello world?", // plain text body
             html: `
-            <strong> Name: </strong> <span> ${name + lastName} </span><br/>
+            <strong> Name: </strong> <span> ${name} ${lastName} </span><br/>
             <strong> Email: </strong> <span> ${email} </span><br/>
-            <strong> Subject: </strong> <span> ${subject} </span><br/>
             <strong> Number: </strong> <span> ${senderNumber} </span><br/>
+            <strong> Subject: </strong> <span> ${subject} </span><br/>
             <strong> Message: </strong> <span> ${message} </span><br/>
             <strong> Contate-me por Whatsapp: </strong> <span> ${whatsAppCheck} </span><br/>
             <strong> Contate-me por email: </strong> <span> ${emailCheck} </span><br/>
