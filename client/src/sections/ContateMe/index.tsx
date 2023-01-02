@@ -68,7 +68,6 @@ export const ContateMe = () => {
                         opiniões, sugestões de projetos, ideias criativas,
                         oportunidades e etc.
                     </span>
-
                     <div>
                         <Phone>
                             <PhoneCall size={30} color="#D19900" />
