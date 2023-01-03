@@ -15,7 +15,7 @@ export const AboutMeContainer = styled.div`
         font-size: 3.6rem;
         margin-bottom: 4rem;
     }
-    button {
+    a {
         width: 16rem;
         height: 4rem;
         display: flex;
