@@ -2,7 +2,7 @@ import { formatDistanceToNow } from "date-fns"
 import { ptBR } from "date-fns/locale"
 import { Title } from "../../components/Title"
 import { AboutMeContainer, Experience_projects, FirstInformation, PersonalInformationContainer, SecondInformation } from "./styles"
-import edital from "../../assets/edital.pdf"
+import curriculo from "../../assets/curriculo.pdf"
 
 export const AboutMe = () => {
     const distance = formatDistanceToNow(new Date('2003-12-08T15:22:12.931Z'), {
@@ -50,7 +50,7 @@ export const AboutMe = () => {
                     </SecondInformation>
                 </PersonalInformationContainer>
             </div>
-            <a href={edital} download="Curricula de Eduardo"> Pedir Currículo </a>
+            <a href={curriculo} download="Currículo_de_Eduardo"> Pedir Currículo </a>
         </AboutMeContainer>
     )
 }
