@@ -1,4 +1,4 @@
-import { formatDistance, formatDistanceToNow } from "date-fns"
+import { formatDistanceToNow } from "date-fns"
 import { ptBR } from "date-fns/locale"
 import { Title } from "../../components/Title"
 import { AboutMeContainer, Experience_projects, FirstInformation, PersonalInformationContainer, SecondInformation } from "./styles"
@@ -11,6 +11,7 @@ export const AboutMe = () => {
     return (
         <AboutMeContainer>
             <Title title="Sobre mim" />
+
             <div>
                 <h3>Informações pessoais</h3>
                 <PersonalInformationContainer>

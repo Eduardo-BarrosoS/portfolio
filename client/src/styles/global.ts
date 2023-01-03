@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     * {
@@ -17,8 +17,8 @@ export const GlobalStyles = createGlobalStyle`
     }
     
     body {
-        background: ${(props) => props.theme.darkBlue} no-repeat url('./src/assets/bgEffect.svg');
-        background-color: ${(props) => props.theme.darkBlue};
+        background: ${(props) => props.theme.darkBlue} no-repeat url("./src/assets/bgEffect.svg");
+        background-size: cover;
         color: ${(props) => props.theme.white};
         -webkit-font-smoothing: antialiased;
     }
@@ -29,4 +29,6 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 1rem;
     }
     
+
 `
+
