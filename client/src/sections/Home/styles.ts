@@ -1,15 +1,11 @@
 import styled from "styled-components";
 
-
 export const HomeContainer = styled.div`
 
     padding-top: 11.7rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-
-
 `
 export const ContainerImg = styled.div`
 

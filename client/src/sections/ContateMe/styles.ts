@@ -5,6 +5,7 @@ export const ContateMeContainer = styled.div`
 
     & > div {
         display: flex;
+        justify-content: center;
         gap: 6.4rem;
     }
 

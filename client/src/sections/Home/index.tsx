@@ -1,6 +1,8 @@
 import { ArrowRight, Alarm, InstagramLogo, WhatsappLogo, LinkedinLogo, GithubLogo } from "phosphor-react"
 import { useState } from "react"
 import { ContainerImg, HomeContainer, Presentation, SocialMedias } from "./styles"
+import bgEffect from "../../assets/bgEffect.svg" 
+
 
 export const HomeSection = () => {
 

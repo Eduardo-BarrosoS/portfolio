@@ -4,6 +4,7 @@ export const ItemsContainer = styled.div`
 
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
         row-gap: 9.5rem;
 
         div {
